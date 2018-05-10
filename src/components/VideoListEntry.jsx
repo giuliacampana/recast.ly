@@ -1,10 +1,6 @@
 class VideoListEntry extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      select: false
-    };
   }
 
   onTitleClick() {
@@ -12,15 +8,15 @@ class VideoListEntry extends React.Component {
   }
 
   render() {
-
+    let {img, title, description} = this.props.video;
     return (
       <div className="video-list-entry media">
         <div className="media-left media-middle">
-          <img className="media-object" src={this.props.video.img} alt="" />
+          <img className="media-object" src={img} alt="" />
         </div>
         <div className="media-body">
-          <div className="video-list-entry-title" onClick={this.onTitleClick.bind(this)}>{this.props.video.title}</div>
-          <div className="video-list-entry-detail">{this.props.video.description}</div>
+          <div className="video-list-entry-title" onClick={this.onTitleClick.bind(this)}>{title}</div>
+          <div className="video-list-entry-detail">{description}</div>
         </div>
       </div>
     );

@@ -23,15 +23,14 @@ class App extends React.Component {
   updateVideosAfterFetch(object) {
     this.setState({
       videosLoaded: object.items
-    })
+    });
   }
 
   componentDidMount() {
-    console.log("compDidMount");
-    this.onSearchClick('muffin');
+    this.searchForVideo('muffin');
   }
 
-  onSearchClick(query) {
+  searchForVideo(query) {
     var options = {
       q: query,
       max: 5,
@@ -48,7 +47,7 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <Search search={this.onSearchClick.bind(this)}/>
+            <Search search={this.searchForVideo.bind(this)}/>
           </div>
         </nav>
         <div className="row">
